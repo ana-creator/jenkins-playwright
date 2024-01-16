@@ -27,8 +27,8 @@ pipeline {
     //not good practice to attach screenshots here, it's just an example
      post {
         success {
-          archiveArtifacts(artifacts: './homepage-*.png', followSymlinks: false)
-          bat 'rm -rf *.png'
+          archiveArtifacts(artifacts: 'homepage-*.png', followSymlinks: false)
+          bat 'del /Q homepage-*.png'
         }
       }
    }
