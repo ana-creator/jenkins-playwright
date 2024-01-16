@@ -1,1 +1,1 @@
-# jenkins-playwrite
+# jenkins-playwright
