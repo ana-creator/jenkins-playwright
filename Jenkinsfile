@@ -25,12 +25,11 @@ pipeline {
        '''
      }
     //not good practice to attach screenshots here, it's just an example
-     post {
-        success {
-          archiveArtifacts(artifacts: 'tests/homepage-*.png', followSymlinks: false)
-          bat 'del /Q homepage-*.png'
-        }
-      }
+     stage('Archive Artifacts') {
+     steps {
+       archiveArtifacts artifacts: 'tests/*.png', allowEmptyArchive: true
+     }
+   }
    }
  }
 }
