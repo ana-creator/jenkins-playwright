@@ -24,12 +24,13 @@ pipeline {
          npx playwright test
        '''
      }
+    } 
     //not good practice to attach screenshots here, it's just an example
      stage('Archive Artifacts') {
      steps {
        archiveArtifacts artifacts: 'tests/*.png', allowEmptyArchive: true
      }
    }
-   }
+   
  }
 }
